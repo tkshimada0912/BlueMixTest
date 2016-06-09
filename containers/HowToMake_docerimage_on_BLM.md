@@ -116,8 +116,11 @@ ping is OK, but it takes some seconds to enable ip address.
 
     ssh -i ~/.ssh/id_dsa 169.44.119.20 -l root
 
+You can logged into container environment with public-key authentication.
+
 ## BlueMix coutainer environment
 
+I checked container environment inside.
 BlueMix container environment looks very standard configuration.
 
 - assigned ip address is '172.31.0.2/16', this looks standard bridge-based docker environmnet.
@@ -127,4 +130,13 @@ BlueMix container environment looks very standard configuration.
 - kernel 3.19.0-49-generic #55~14.04.1-Ubuntu
 - root file size is 9.8GB... it could be loopback file base storage driver ? ( performance is not good ) ... check after.
 
+it looks like very natural, normal, common configuration.
 
+BlueMix cf ic command API is just a little unpreasant.
+
+- sluggish
+- no response from repository
+- slow to bind ip address
+
+Container environment is expected to be deployed at high speed, I think.
+But BlueMix of container environment feel a little unsatisfactory.
