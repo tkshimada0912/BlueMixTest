@@ -128,14 +128,21 @@ BlueMix container environment looks very standard configuration.
 - CPU: E5-2690 / 48 processors 2 physical,12 cores,2 threads
 - 256GB memory
 - kernel 3.19.0-49-generic #55~14.04.1-Ubuntu
-- root file size is 9.8GB... it could be loopback file base storage driver ? ( performance is not good ) ... check after.
+- root filesystem size is 9.8GB. This is standard I thnk.
 
 it looks like very natural, normal, common configuration.
 
+But there's just a little difference in global/public IP address assignment.
+Normally docker containers in a docker host shares outbound interface address, and 
+expose any service endpoint with tcp port number.
+In Bluemix container environment, containers hold discrete ip address.
+It is enable to do these configuration with any docker network driver.
+But it is not a normal configuration, it may need any paticular setting in docker host.
+
 BlueMix cf ic command API is just a little unpreasant.
 
-- sluggish
-- no response from repository
+- response is slow
+- sometime no response from repository
 - slow to bind ip address
 
 Container environment is expected to be deployed at high speed, I think.
